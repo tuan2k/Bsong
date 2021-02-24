@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>bsong</display-name>
+ <welcome-file-list>
+    <welcome-file>/home</welcome-file>
+  </welcome-file-list>
+   
+    <filter>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+  <servlet>
+    <servlet-name>PublicIndexController</servlet-name>
+    <servlet-class>controller.publics.PublicIndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublicIndexController</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PublicCatController</servlet-name>
+    <servlet-class>controller.publics.PublicCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublicCatController</servlet-name>
+    <url-pattern>/cat</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PublicDetailController</servlet-name>
+    <servlet-class>controller.publics.PublicDetailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublicDetailController</servlet-name>
+    <url-pattern>/detail</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PublicContactController</servlet-name>
+    <servlet-class>controller.publics.PublicContactController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PublicContactController</servlet-name>
+    <url-pattern>/contact</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminIndexCatController</servlet-name>
+    <servlet-class>controller.admin.AdminIndexCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexCatController</servlet-name>
+    <url-pattern>/admin/cat/index</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminIndexController</servlet-name>
+    <servlet-class>controller.admin.AdminIndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexController</servlet-name>
+    <url-pattern>/admin/index</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminAddCatController</servlet-name>
+    <servlet-class>controller.admin.AdminAddCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminAddCatController</servlet-name>
+    <url-pattern>/admin/cat/add</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminDeleteCatController</servlet-name>
+    <servlet-class>controller.admin.AdminDeleteCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteCatController</servlet-name>
+    <url-pattern>/admin/cat/del</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminEditCatController</servlet-name>
+    <servlet-class>controller.admin.AdminEditCatController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEditCatController</servlet-name>
+    <url-pattern>/admin/cat/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminIndexUserController</servlet-name>
+    <servlet-class>controller.admin.AdminIndexUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexUserController</servlet-name>
+    <url-pattern>/admin/user/index</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminAddUserController</servlet-name>
+    <servlet-class>controller.admin.AdminAddUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminAddUserController</servlet-name>
+    <url-pattern>/admin/user/add</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminDeleteUserController</servlet-name>
+    <servlet-class>controller.admin.AdminDeleteUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteUserController</servlet-name>
+    <url-pattern>/admin/user/del</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminEditUserController</servlet-name>
+    <servlet-class>controller.admin.AdminEditUserController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEditUserController</servlet-name>
+    <url-pattern>/admin/user/edit</url-pattern>
+  </servlet-mapping>
+  
+<servlet>
+    <servlet-name>AdminIndexSongController</servlet-name>
+    <servlet-class>controller.admin.AdminIndexSongController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexSongController</servlet-name>
+    <url-pattern>/admin/song/index</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminDeleteSongController</servlet-name>
+    <servlet-class>controller.admin.AdminDeleteSongController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteSongController</servlet-name>
+    <url-pattern>/admin/song/del</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminEditSongController</servlet-name>
+    <servlet-class>controller.admin.AdminEditSongController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEditSongController</servlet-name>
+    <url-pattern>/admin/song/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminAddSongController</servlet-name>
+    <servlet-class>controller.admin.AdminAddSongController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminAddSongController</servlet-name>
+    <url-pattern>/admin/song/add</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AdminIndexContactController</servlet-name>
+    <servlet-class>controller.admin.AdminIndexContactController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexContactController</servlet-name>
+    <url-pattern>/admin/contact/index</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>AdminAddContactController</servlet-name>
+    <servlet-class>controller.admin.AdminAddContactController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminAddContactController</servlet-name>
+    <url-pattern>/admin/contact/add</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>AdminDeleteContactController</servlet-name>
+    <servlet-class>controller.admin.AdminDeleteContactController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDeleteContactController</servlet-name>
+    <url-pattern>/admin/contact/del</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>AdminEditContactController</servlet-name>
+    <servlet-class>controller.admin.AdminEditContactController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEditContactController</servlet-name>
+    <url-pattern>/admin/contact/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>AddContactController</servlet-name>
+    <servlet-class>controller.publics.AddContactController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddContactController</servlet-name>
+    <url-pattern>/public/contact/index</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>LoginController</servlet-name>
+    <servlet-class>controller.auth.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/auth/login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>LogoutController</servlet-name>
+    <servlet-class>controller.auth.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/auth/logout</url-pattern>
+  </servlet-mapping>
+    
+  <error-page>
+  <error-code>404</error-code>
+  <location>/views/error_page.jsp</location>
+  </error-page>
+  
+</web-app>

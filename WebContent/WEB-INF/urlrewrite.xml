@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlrewrite>
+	<rule>
+		<!-- 
+		  /cat?id = 4
+		  bsong.local:8080/danh-muc/nhac-tre-4.html
+		  
+		  [bieu thuc chinh quy]
+		  ->^ : bat dau ( ex: ^a)
+		  ->$ : ket thuc ex:  a$ true -> bong da
+		  [a-z] : 1 ky tu tu a den z viet thuong
+		  [A-Z] : 1 ky tu  A den Z
+		  ([a-z]*): dai dien 0 hoac nhieu ky tu tu a-> z
+		  ([A-Z]*): dai dien 0 hoac nhieu ky tu tu A-> Z
+		  -> (.*) : dai dien 0 hoac nhieu ky tu bat ky
+		  -> (.+) : dai dien 1 hoac nhieu ky tu bat ky
+		  ([a-zA-Z] *||+ ): dai dien ky tu a->z , A->Z
+		  [0-9] : cac so tu 0->9
+		 -> ([0-9]+) : cac so tu 1->n
+		  -> ([0-9]*): cac so 0->n
+		 -->
+		<from>/category/(.+)-([0-9]+)-([0-9]+).html</from>
+		<to>/cat?cid=$2&amp;page=$3</to>
+	</rule>
+	<rule>
+		<from>/detail/(.+)-([0-9]+).html</from>
+		<to>/detail?sid=$2</to>
+	</rule>
+	
+	<rule>
+		<from>/home/(.+)-(.+)-([0-9]+).html</from>
+		<to>/home?search=$2&amp;page=$3</to>
+	</rule>
+</urlrewrite>
